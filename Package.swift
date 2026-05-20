@@ -5,18 +5,20 @@ let package = Package(
   name: "elementary-web-app",
   platforms: [.macOS(.v15)],
   dependencies: [
-    .package(url: "https://github.com/elementary-swift/elementary-ui.git", from: "0.2.3"),
+    .package(url: "https://github.com/elementary-swift/elementary-ui.git", from: "0.2.3")
   ],
   targets: [
     .executableTarget(
       name: "WebApp",
       dependencies: [
-        .product(name: "ElementaryUI", package: "elementary-ui"),
+        .product(name: "ElementaryUI", package: "elementary-ui")
       ],
       swiftSettings: [
-        .swiftLanguageMode(.v6)
+        .swiftLanguageMode(.v5)
+      ],
+      linkerSettings: [
+        .linkedLibrary("swiftUnicodeDataTables")
       ],
     )
-  ],
-  swiftLanguageModes: [.v6],
+  ]
 )
