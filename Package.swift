@@ -16,9 +16,6 @@ let package = Package(
       swiftSettings: [
         .swiftLanguageMode(.v5)
       ],
-      linkerSettings: [
-        .linkedLibrary("swiftUnicodeDataTables")
-      ],
     )
   ]
 )
